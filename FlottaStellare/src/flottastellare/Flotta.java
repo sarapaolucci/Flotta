@@ -4,10 +4,24 @@
  */
 package flottastellare;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author paolucci.sara
  */
 public class Flotta {
+    private ArrayList<Astronave> astronavi = new ArrayList();
     
+    public void aggiungiAstronave(Astronave a){
+        if(a != null && astronavi.contains(a) == false){
+            astronavi.add(a);
+        }
+    }
+    
+    public void eliminaAstronave(Astronave a){
+        if(a != null && astronavi.contains(a) == true){
+            astronavi.remove(a);
+        }
+    }
 }

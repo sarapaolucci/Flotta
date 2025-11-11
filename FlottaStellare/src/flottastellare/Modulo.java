@@ -9,5 +9,12 @@ package flottastellare;
  * @author paolucci.sara
  */
 public class Modulo {
+    private String nome, tipo;
+    private boolean stato;
     
+    public Modulo(String n, String t){
+        this.nome = n;
+        this.tipo = t;
+        this.stato = true;
+    }
 }
