@@ -3,7 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package flottastellare;
-
+import java.util.Random;
 import java.util.ArrayList;
 
 /**
@@ -12,6 +12,8 @@ import java.util.ArrayList;
  */
 public class Flotta {
     private ArrayList<Astronave> astronavi = new ArrayList();
+    
+    Random random = new Random();
     
     public void aggiungiAstronave(Astronave a){
         if(a != null && astronavi.contains(a) == false){
@@ -24,4 +26,15 @@ public class Flotta {
             astronavi.remove(a);
         }
     }
+    
+    public void alieniAbordo(){
+        int r = random.nextInt(astronavi.size());
+        astronavi.get(r).alieniAbordo();
+    }
+    
+    public void danni(){
+        int r = random.nextInt(astronavi.size());
+        astronavi.get(r).danni();
+    }
+    
 }

@@ -21,15 +21,16 @@ public class Membro {
         this.stato = true;
     }
     
-    public void setSalute( int s){
-        this.salute = s;
-        if(salute < 30){
-            this.stato = false;
-        }
-    }
-    
     public void setAstronave(Astronave a){
         this.astronave = a;
+    }
+    
+    public int getSalute(){
+        return this.salute;
+    }
+    
+    public void setStato(boolean s){
+        this.stato = s;
     }
     
     public String getAstronave(){
@@ -38,5 +39,16 @@ public class Membro {
     
     public void cure(){
         this.salute = 100;
+        this.stato = true;
     }
+    
+    public void alieniAbordo(){
+        if(ruolo.equals("ingegnere")){
+            salute -= 30;
+        }
+        else if(ruolo.equals("pilota")){
+            salute -= 50;
+        }
+    }
+    
 }

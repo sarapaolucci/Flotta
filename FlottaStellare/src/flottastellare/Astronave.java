@@ -27,11 +27,17 @@ public class Astronave {
     public String getNome(){
         return this.nome;
     }
-    
+     
     public void alieniAbordo(){
-        stato -= 20;
+        this.stato -= 10;
         int i = random.nextInt(membri.size());
-        membri.get(i).setSalute(20);
+        membri.get(i).alieniAbordo();
+        if(membri.get(i).getSalute() <= 0){
+            eliminaMembro(membri.get(i));
+        }
+        else if(membri.get(i).getSalute() < 31){
+            membri.get(i).setStato(false);
+        }
     }
     
     public void aggiungiMembro(Membro m){
@@ -57,4 +63,15 @@ public class Astronave {
             moduli.remove(m);
         }
     }
+    
+    public void danni(){
+        this.stato -= 20;
+        int i = random.nextInt(moduli.size());
+        moduli.get(i).danni();
+        if(moduli.get(i).getSalute() <= 0){
+            eliminaModulo(moduli.get(i));
+        }
+        
+    }
+    
 }

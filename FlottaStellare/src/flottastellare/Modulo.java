@@ -11,10 +11,21 @@ package flottastellare;
 public class Modulo {
     private String nome, tipo;
     private boolean stato;
+    private int salute;
     
     public Modulo(String n, String t){
         this.nome = n;
         this.tipo = t;
         this.stato = true;
+        this.salute = 100;
     }
+    
+    public int getSalute(){
+        return this.salute;
+    }
+    
+    public void danni(){
+        this.salute -= 30;
+    }
+    
 }
