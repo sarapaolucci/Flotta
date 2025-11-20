@@ -9,17 +9,20 @@ package flottastellare;
  * @author paolucci.sara
  */
 public class Membro {
-    private String nome, ruolo;
+    private String nome;
+    private Ruoli r;
     private int salute;
     private Astronave astronave;
     private boolean stato;
     
-    public Membro(String n, String r){
+    public Membro(String n, Ruoli r){
         this.nome = n;
-        this.ruolo = r;
+        this.r = r;
         this.salute = 100;
         this.stato = true;
     }
+    
+    
     
     public void setAstronave(Astronave a){
         this.astronave = a;
@@ -43,10 +46,10 @@ public class Membro {
     }
     
     public void alieniAbordo(){
-        if(ruolo.equals("ingegnere")){
+        if(r.equals("ingegnere")){
             salute -= 30;
         }
-        else if(ruolo.equals("pilota")){
+        else if(r.equals("pilota")){
             salute -= 50;
         }
     }
