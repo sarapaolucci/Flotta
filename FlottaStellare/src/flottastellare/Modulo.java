@@ -29,4 +29,8 @@ public class Modulo {
         this.salute -= 30;
     }
     
+    public String stampaStato (){
+        return "Nome: " + this.nome + "Tipo: " + this.tipo;
+    }
+    
 }

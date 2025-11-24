@@ -22,8 +22,6 @@ public class Membro {
         this.stato = true;
     }
     
-    
-    
     public void setAstronave(Astronave a){
         this.astronave = a;
     }
@@ -46,10 +44,10 @@ public class Membro {
     }
     
     public void alieniAbordo(){
-        if(r.equals("ingegnere")){
+        if(r.equals(r.INGEGNERE)){
             salute -= 30;
         }
-        else if(r.equals("pilota")){
+        else if(r.equals(r.PILOTA)){
             salute -= 50;
         }
     }
