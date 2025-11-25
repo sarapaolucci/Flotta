@@ -37,4 +37,19 @@ public class Flotta {
         astronavi.get(r).danni();
     }
     
+    public void collisione(){
+        int r = random.nextInt(astronavi.size());
+        int s =random.nextInt(astronavi.size());
+        eliminaAstronave( astronavi.get(r));
+        eliminaAstronave( astronavi.get(s));
+    }
+    
+    public String stampaStato(){
+        String astronavistampa = "";
+        for(int i = 0; i < astronavi.size(); i++){
+            astronavistampa += astronavi.get(i).stampaStato();
+        }
+        return "Astronavi: " + astronavistampa;
+    }
+    
 }

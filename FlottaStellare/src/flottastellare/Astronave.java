@@ -42,7 +42,6 @@ public class Astronave {
         else{
             this.stato -= 10;
         }
-        
     }
     
     public void aggiungiMembro(Membro m){
@@ -78,13 +77,35 @@ public class Astronave {
         return false;
     }
     
+    public boolean cercaTipo(Tipi t){
+        for(int i = 0; i < membri.size(); i++){
+            if(membri.get(i).equals(t.toString())){
+                return true;
+            }
+        }
+        return false;
+    }
+    
     public void danni(){
         int i = random.nextInt(moduli.size());
-        moduli.get(i).danni();
+        if(cercaTipo(Tipi.SCUDO) == false){
+            moduli.get(i).danni();
+        }
         if(moduli.get(i).getSalute() <= 0){
            eliminaModulo(moduli.get(i));
         }
         this.stato -= 20;
+    }
+    
+    public String stampaStato(){
+        String membristampa = "", modulistampa = "";
+        for(int i = 0; i < membri.size(); i++){
+            membristampa += membri.get(i).stampaStato();
+        }
+        for(int i = 0; i < moduli.size(); i++){
+            modulistampa += moduli.get(i).stampaStato();
+        }
+        return "Nome: " + this.nome + "\nStato: " + this.stato + "\nModuli: " + modulistampa + "\nMembri: " + membristampa;
     }
     
 }

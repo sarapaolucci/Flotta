@@ -52,4 +52,7 @@ public class Membro {
         }
     }
     
+    public String stampaStato (){
+        return "Nome: " + this.nome + "\nRuolo: " + this.r + "\nStato: " + this.stato + "\nSalute: " + this.salute + "\n Astronave: " + this.getAstronave();
+    }
 }

@@ -30,7 +30,7 @@ public class Modulo {
     }
     
     public String stampaStato (){
-        return "Nome: " + this.nome + "Tipo: " + this.tipo;
+        return "Nome: " + this.nome + "\nTipo: " + this.tipo + "\nStato: " + this.stato + "\nSalute: " + this.salute;
     }
     
 }
